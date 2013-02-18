@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.11 (TeX Live 2010) (format=pdflatex 2010.7.21)  18 FEB 2013 04:19
+This is pdfTeX, Version 3.1415926-1.40.11 (TeX Live 2010) (format=pdflatex 2010.7.21)  18 FEB 2013 04:25
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -141,7 +141,11 @@ Class revtex4-1 Info: cite was not loaded (OK!) on input line 5.
 Class revtex4-1 Info: mcite was not loaded (OK!) on input line 5.
 Class revtex4-1 Info: multicol was not loaded (OK!) on input line 5.
 
-(./hollow_channel.aux)
+(./hollow_channel.aux
+
+LaTeX Warning: Label `eq:force' multiply defined.
+
+)
 \openout1 = `hollow_channel.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 5.
@@ -156,8 +160,7 @@ LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 5.
 LaTeX Font Info:    ... okay on input line 5.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 5.
 LaTeX Font Info:    ... okay on input line 5.
-
-(/usr/local/texlive/2010/texmf-dist/tex/context/base/supp-pdf.mkii
+ (/usr/local/texlive/2010/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count96
 \scratchdimen=\dimen104
@@ -226,14 +229,7 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <6> on input line 16.
 
-[2]
-
-LaTeX Warning: Reference `eq:max_wave' on page 3 undefined on input line 51.
-
-
-LaTeX Warning: Reference `eq:gauge' on page 3 undefined on input line 51.
-
-<./figures/thin_cyl.pdf, id=17, 721.69624pt x 227.85126pt>
+[2] <./figures/thin_cyl.pdf, id=17, 721.69624pt x 227.85126pt>
 File: ./figures/thin_cyl.pdf Graphic file (type pdf)
 
 <use ./figures/thin_cyl.pdf> [3]
@@ -243,29 +239,21 @@ File: ./figures/fields.pdf Graphic file (type pdf)
 <use ./figures/fields.pdf>
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <10.95> on input line 104.
-
-
-LaTeX Warning: Reference `eq:gauge_qs' on page 4 undefined on input line 107.
-
-[4 <./figures/thin_cyl.pdf>] [5 <./figures/fields.pdf>]
-<./figures/sheath.pdf, id=53, 361.35pt x 224.09422pt>
+ [4 <./figures/thin_cyl.pdf>] [5 <./figures/fields.pdf>] <./figures/sheath.pdf,
+ id=53, 361.35pt x 224.09422pt>
 File: ./figures/sheath.pdf Graphic file (type pdf)
 
 <use ./figures/sheath.pdf>
 No file hollow_channel.bbl.
 [6 <./figures/sheath.pdf>] (./hollow_channel.aux)
 
-LaTeX Warning: There were undefined references.
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right .
-
+LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
  3325 strings out of 493747
  44973 string characters out of 3143546
- 121550 words of memory out of 3000000
+ 121915 words of memory out of 3000000
  6605 multiletter control sequences out of 15000+200000
  9133 words of font info for 32 fonts, out of 3000000 for 9000
  714 hyphenation exceptions out of 8191
@@ -282,7 +270,7 @@ al/texlive/2010/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local
 /texlive/2010/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/te
 xlive/2010/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/tex
 live/2010/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
-Output written on hollow_channel.pdf (6 pages, 225575 bytes).
+Output written on hollow_channel.pdf (6 pages, 225197 bytes).
 PDF statistics:
  106 PDF objects out of 1000 (max. 8388607)
  77 compressed objects within 1 object stream
