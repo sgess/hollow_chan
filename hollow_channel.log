@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.11 (TeX Live 2010) (format=pdflatex 2010.7.21)  18 FEB 2013 04:25
+This is pdfTeX, Version 3.1415926-1.40.11 (TeX Live 2010) (format=pdflatex 2010.7.21)  18 FEB 2013 15:56
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -251,10 +251,10 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 3325 strings out of 493747
- 44973 string characters out of 3143546
- 121915 words of memory out of 3000000
- 6605 multiletter control sequences out of 15000+200000
+ 3326 strings out of 493747
+ 44993 string characters out of 3143546
+ 120915 words of memory out of 3000000
+ 6606 multiletter control sequences out of 15000+200000
  9133 words of font info for 32 fonts, out of 3000000 for 9000
  714 hyphenation exceptions out of 8191
  38i,8n,25p,559b,287s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -270,7 +270,7 @@ al/texlive/2010/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local
 /texlive/2010/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/te
 xlive/2010/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/tex
 live/2010/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
-Output written on hollow_channel.pdf (6 pages, 225197 bytes).
+Output written on hollow_channel.pdf (6 pages, 228484 bytes).
 PDF statistics:
  106 PDF objects out of 1000 (max. 8388607)
  77 compressed objects within 1 object stream
