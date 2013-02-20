@@ -140,7 +140,13 @@ because we have assumed that $V_z = 0$. The radial field is
 E_r =-\nabla_{\perp} \phi - \frac{\partial A_r}{\partial \xi} = -\frac{\lambda r}{r_s^2}[r_s r_s'' - r_s'^2]
 \end{equation}
 
-with $\nabla_{\perp} \phi = 0$ for the sheath electrons because there is zero charge within the sheath layer. The EOM $\partial_{\xi} P_{\perp} = -E_r$ can be rewritten using the integral of motion $\gamma - P_z = 1 + \psi$:
+with $\nabla_{\perp} \phi = 0$ for the sheath electrons because there is zero charge within the sheath layer. The EOM $\partial_{\xi} P_{\perp} = -E_r$ is rewritten with the ``particle tracking" trajectory $\xi = t - z \rightarrow \partial_{\xi} = (1-v_z)\partial_t$:
+
+\begin{equation}\label{eq:track}
+\frac{\partial P_{\perp}}{\partial \xi} = \frac{\partial \gamma v_{\perp}}{\partial \xi} =  \frac{\partial}{\partial \xi}\left(\gamma \frac{\partial r_{\perp}}{\partial t}\right) = \frac{\partial}{\partial \xi}\left[\gamma (1-v_z)\frac{\partial r_{\perp}}{\partial \xi}\right]
+\end{equation}
+
+and using the integral of motion $\gamma - P_z = 1 + \psi$
 
 \begin{equation}\label{eq:EOM}
 \frac{\partial P_{\perp}}{\partial \xi} = \frac{\partial}{\partial \xi}[(1+\psi)r_s'] = \frac{\lambda r}{r_s^2}[r_s r_s'' - r_s'^2] 
@@ -152,10 +158,10 @@ Plugging in $\psi = \phi$ we have:
 \left(1+2\lambda\log\left(\frac{a}{r_s}\right) - \lambda\right)r_s'' -\lambda\frac{r_s'^2}{r_s} = 0
 \end{equation}
 
-In order to study this equation, let's set $a=1$ and $\lambda = -1$. Then
+In order to study this equation, let's set $a=1$ and rescale $\lambda' = -\lambda$ so $\lambda'$ is free parameter that varies between 0 and 1:
 
 \begin{equation}\label{eq:rs_simp}
-(2+2\log(r_s)) r_s r_s'' + r_s'^2 = 0
+[1+\lambda'(1+2\log(r_s))] r_s r_s'' + \lambda'r_s'^2 = 0
 \end{equation}
 
 Immediately we see that we might run into trouble when $r_s = 0$ due to the divergence in the log term (although $x\log x = 0$ as $x\rightarrow0$).

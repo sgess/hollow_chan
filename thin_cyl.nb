@@ -1671,7 +1671,7 @@ o59PEYEPN+5eETFKYvvTEJnDGwLzLcrNHP4lMS0yIcaslMDigemKsTESuVvy
 }, Open  ]]
 },
 WindowSize->{862, 724},
-WindowMargins->{{12, Automatic}, {4, Automatic}},
+WindowMargins->{{18, Automatic}, {Automatic, 0}},
 FrontEndVersion->"8.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (November 13, \
 2010)",
 StyleDefinitions->"Default.nb"

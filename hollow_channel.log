@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.11 (TeX Live 2010) (format=pdflatex 2010.7.21)  18 FEB 2013 15:56
+This is pdfTeX, Version 3.1415926-1.40.11 (TeX Live 2010) (format=pdflatex 2010.7.21)  20 FEB 2013 03:22
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -245,16 +245,16 @@ File: ./figures/sheath.pdf Graphic file (type pdf)
 
 <use ./figures/sheath.pdf>
 No file hollow_channel.bbl.
-[6 <./figures/sheath.pdf>] (./hollow_channel.aux)
+[6] [7 <./figures/sheath.pdf>] (./hollow_channel.aux)
 
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 3326 strings out of 493747
- 44993 string characters out of 3143546
- 120915 words of memory out of 3000000
- 6606 multiletter control sequences out of 15000+200000
+ 3327 strings out of 493747
+ 45003 string characters out of 3143546
+ 120930 words of memory out of 3000000
+ 6607 multiletter control sequences out of 15000+200000
  9133 words of font info for 32 fonts, out of 3000000 for 9000
  714 hyphenation exceptions out of 8191
  38i,8n,25p,559b,287s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -270,10 +270,10 @@ al/texlive/2010/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local
 /texlive/2010/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/te
 xlive/2010/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/tex
 live/2010/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
-Output written on hollow_channel.pdf (6 pages, 228484 bytes).
+Output written on hollow_channel.pdf (7 pages, 229999 bytes).
 PDF statistics:
- 106 PDF objects out of 1000 (max. 8388607)
- 77 compressed objects within 1 object stream
+ 111 PDF objects out of 1000 (max. 8388607)
+ 81 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  16 words of extra memory for PDF output out of 10000 (max. 10000000)
 
