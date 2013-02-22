@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.11 (TeX Live 2010) (format=pdflatex 2010.7.21)  21 FEB 2013 04:20
+This is pdfTeX, Version 3.1415926-1.40.11 (TeX Live 2010) (format=pdflatex 2010.7.21)  22 FEB 2013 04:39
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -229,35 +229,35 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <6> on input line 16.
 
-[2] <./figures/thin_cyl.pdf, id=17, 721.69624pt x 227.85126pt>
+[2] [3] <./figures/thin_cyl.pdf, id=21, 721.69624pt x 227.85126pt>
 File: ./figures/thin_cyl.pdf Graphic file (type pdf)
 
-<use ./figures/thin_cyl.pdf> [3] [4 <./figures/thin_cyl.pdf>]
-<./figures/fields.pdf, id=36, 361.35pt x 225.60085pt>
+<use ./figures/thin_cyl.pdf> [4] [5 <./figures/thin_cyl.pdf>]
+<./figures/fields.pdf, id=39, 361.35pt x 225.60085pt>
 File: ./figures/fields.pdf Graphic file (type pdf)
 
 <use ./figures/fields.pdf>
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <10.95> on input line 124.
- [5 <./figures/fields.pdf>] [6]
-<./figures/sheath.pdf, id=56, 361.35pt x 224.09422pt>
+(Font)              <10.95> on input line 173.
+ [6 <./figures/fields.pdf>] [7]
+<./figures/sheath.pdf, id=60, 361.35pt x 224.09422pt>
 File: ./figures/sheath.pdf Graphic file (type pdf)
 
 <use ./figures/sheath.pdf>
 No file hollow_channel.bbl.
-[7 <./figures/sheath.pdf>] (./hollow_channel.aux)
+[8 <./figures/sheath.pdf>] (./hollow_channel.aux)
 
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 3330 strings out of 493747
- 45039 string characters out of 3143546
- 120975 words of memory out of 3000000
- 6610 multiletter control sequences out of 15000+200000
+ 3338 strings out of 493747
+ 45124 string characters out of 3143546
+ 121095 words of memory out of 3000000
+ 6618 multiletter control sequences out of 15000+200000
  9133 words of font info for 32 fonts, out of 3000000 for 9000
  714 hyphenation exceptions out of 8191
- 38i,8n,25p,727b,287s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 38i,8n,25p,761b,287s stack positions out of 5000i,500n,10000p,200000b,50000s
 </usr/local/texlive/2010/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
 ></usr/local/texlive/2010/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
 </usr/local/texlive/2010/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><
@@ -270,10 +270,10 @@ al/texlive/2010/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local
 /texlive/2010/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/te
 xlive/2010/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/tex
 live/2010/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
-Output written on hollow_channel.pdf (7 pages, 233292 bytes).
+Output written on hollow_channel.pdf (8 pages, 235767 bytes).
 PDF statistics:
- 111 PDF objects out of 1000 (max. 8388607)
- 81 compressed objects within 1 object stream
+ 114 PDF objects out of 1000 (max. 8388607)
+ 83 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  16 words of extra memory for PDF output out of 10000 (max. 10000000)
 
