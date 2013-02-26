@@ -1,5 +1,6 @@
 \documentclass[aps,prl,preprint,groupedaddress]{revtex4-1}
 \usepackage{graphicx}
+\usepackage{subfigure}
 
 \newcommand{\webvector}[2]{\left( \begin{array}{c} #1 \\ #2 \end{array} \right)}
 \begin{document}
@@ -61,7 +62,7 @@ Transforming the left hand side of equations~\ref{eq:max_wave} and~\ref{eq:gauge
 where $\nabla_\perp = \partial_x \hat x + \partial_y \hat y$ and $\mathbf{A}_\perp = A_x \hat x + A_y \hat y$. Finally, we apply the quasistatic approximation $\partial_\tau \phi = \partial_\tau \mathbf{A} = 0$. The quasistatic approximation says that the fields change slowly in the co-moving frame. Defining $\psi \equiv \phi - A_z$ and setting $c = 1$, Maxwell's equations in the quasistatic approximation are:
 
 \begin{equation}\label{eq:max_qs}
--\nabla^2_\perp \webvector{\mathbf{A}}{\phi} = \webvector{\mathbf{J}}{\rho}
+-\nabla^2_\perp \webvector{\mathbf{A}}{\phi} = 4\pi \webvector{\mathbf{J}}{\rho}
 \end{equation}
 
 \begin{equation}\label{eq:gauge_qs}
@@ -71,7 +72,7 @@ where $\nabla_\perp = \partial_x \hat x + \partial_y \hat y$ and $\mathbf{A}_\pe
 The pseudopotential $\psi$ obeys the Poisson-like equation
 
 \begin{equation}\label{eq:Poisson}
--\nabla^2_\perp \psi = \rho - J_z
+-\nabla^2_\perp \psi = 4\pi(\rho - J_z)
 \end{equation}
 
 The continuity equation is
@@ -107,8 +108,10 @@ E_g = -\nabla_\perp \phi
 This term is especially useful when describing the fields and potentials of the radial charge distribution.
 
 \section{Thin cylinder model}
-\subsection{No longitudinal plasma motion}
-Here we describe the response of an infinitely thin cylinder of plasma with radius $a$ to a positively charged drive beam. The charge distribution of the electrons in the plasma is given by $\rho = \sigma \delta(r-a)$ where $\sigma$ is the surface charge density. We can also define a line charge density for the plasma as $\lambda_0 = 2\pi a \sigma$. We assume the beam is relativistic and much shorter than the wavelength of the plasma. In this model, the plasma electrons receive an initial kick due to the beam but we do not include the beam current in our description of the plasma response. We also assume that the plasma electrons only move radially. Note that after the beam has passed, $J_z=0$ and therefore $A_z=0$ so $\psi=\phi$.
+
+Here we describe the response of an infinitely thin cylinder of plasma with radius $a$ to a positively charged drive beam. The charge distribution of the electrons in the plasma is given by $\rho = \sigma \delta(r-a)$ where $\sigma$ is the surface charge density. We can also define a line charge density for the plasma as $\lambda_0 = 2\pi a \sigma$. We assume the beam is relativistic and much shorter than the wavelength of the plasma. In this model, the plasma electrons receive an initial kick due to the beam but we do not include the beam current in our description of the plasma response. 
+
+%We also assume that the plasma electrons only move radially. Note that after the beam has passed, $J_z=0$ and therefore $A_z=0$ so $\psi=\phi$.
 
 \begin{figure}[ht]\label{fig:thin_cyl}
   \centering
@@ -140,7 +143,7 @@ Of course it is completely arbitrary to choose $\sigma_z = a/10$, but this allow
 
 %We also note that our model does not include radiative effects, so for our model to be reasonably accurate, we should require that the normalized kick $\Delta p/m_e c \ll 1$ which means $\bar{I} \ll 5$. At FACET, $\bar{I} \approx 1$ and $\sigma_z/\lambda_p \approx 1/5$. 
 
-We now seek an equation of motion for the position of the plasma electron sheath $r_s$. We assume the ions are stationary. Even though the plasma cylinder is infinitely thin, we can still introduce a notion of charge shielding by noting that the amount of plasma electrons that participate in the interaction is proportional to the line charge of the beam $\lambda_b = m_e c^2 \bar{I}/e$. Then the plasma line charge interacting with the beam is:
+We assume the ions are stationary. Even though the plasma cylinder is infinitely thin, we can still introduce a notion of charge shielding by noting that the amount of plasma electrons that participate in the interaction is proportional to the line charge of the beam $\lambda_b = m_e c^2 \bar{I}/e$. Then the plasma line charge interacting with the beam is:
 
 \begin{equation}\label{eq:part_charge}
 \lambda_i = \left\{ \begin{array}{lr}
@@ -149,37 +152,72 @@ m_e c^2 \bar{I}/e & \lambda_b < \lambda_0 \\
 \end{array} \right.
 \end{equation}
 
-For now we assume that $ \lambda_b < \lambda_0 $ which will likely be the case when we move beyond the thin cylinder model.
+At this point our analysis branches. There are four regimes we will investigate in the thin cylinder model. They are
 
-To solve for $r_s$, we first need to solve for the potential $\psi$. We take $\psi(\infty) = 0$. Outside the cylinder, there is zero net charge (after the drive beam has passed), so Gauss's law gives $E_g(r > a) = 0$ and therefore $\psi(r > a) = const = 0$. Inside the electron sheath there is no charge either, so $E_g(r < r_s) = 0$ and $\psi(r < r_s) = \psi_0$. Between the electron sheath and the ion layer there is a net charge and Gauss's law gives $E_g(r) = -2\bar{I}/r$ for $r_s < r < a$. Note that we normalize $E$ and $\psi$ to $m_e c^2/e$. We can now find the potential by integrating the electric field:
+\begin{itemize}
+\item $\lambda_b > \lambda_0$, small initial kick
+\item $\lambda_b > \lambda_0$, large initial kick
+\item $\lambda_b < \lambda_0$, small initial kick
+\item $\lambda_b < \lambda_0$, large initial kick
+\end{itemize}
 
-\begin{equation}\label{eq:thin_psi}
-\psi(r) = -\int_0^r E(r') dr' = \psi_0 - \int_{r_s}^r \frac{-2\bar{I}}{r'}dr' = \psi_0 - 2\bar{I} \log\left(\frac{r_s}{r}\right)
+We will define ``small initial kick" and ``large initial kick" rigorously later on. Qualitatively, a small initial kick means that the plasma electrons do not cross the beam axis and instead undergo small oscillations about the plasma ions at the cylinder radius. For a large initial kick the plasma electrons cross the beam axis. The on-axis $E_z$ field is much larger in this case.
+
+The cases with $\lambda_b > \lambda_0$ are the simplest because in this scenario the plasma electrons all see the same force and behave coherently. We can use a particle model to describe the trajectory of the plasma electrons. The cases with $\lambda_b < \lambda_0$ are more complex because there is charge screening. The electrons do not all see the same force and the initially thin charge layer broadens. This case requires a fluid model to describe the charge distribution $\rho(r,\xi)$.
+
+
+
+
+
+
+
+\subsection{$\lambda_b > \lambda_0$, Small initial kick}
+
+For the case $\lambda_b > \lambda_0$, all plasma electrons have the same radial position in the plasma sheath for all $\xi$. We now seek an equation of motion for the position of the plasma electron sheath $r_s(\xi)$. To solve for $r_s$, we first need to solve for the potential $\psi$. The source term for $\psi(r,\xi)$ is $\rho - J_z = \lambda_0$ (need clarification here). We take $\psi(r=\infty) = 0$ because outside the cylinder, there is zero net charge (after the drive beam has passed), so Gauss's law gives $E_g(r > a) = 0$ and therefore $\psi(r > a) = const = 0$. Inside the electron sheath there is no charge either, so $E_g(r < r_s) = 0$ and $\psi(r < r_s) = \psi_0$. Between the electron sheath and the ion layer there is a net charge and Gauss's law gives $E_g(r) = 2\lambda_0/r$ for $r_s < r < a$. 
+
+Actually, we do not need to confine ourselves to the case where $r_s < a$ (\emph{i.e.} the plasma electrons within the channel). If we want to consider oscillations of the plasma electrons about the ion cylinder we should also describe the field for $a <  r_s$. The field is $E_g(r) = -2\lambda_0/r$ for $a < r < r_s$  which is the same as in the previous case but the sign is flipped. We can accommodate both $r_s > a$ and $r_s < a$ in a single equation if we write:
+
+\begin{equation}\label{eq:E_both}
+E_g(r) = \frac{2\lambda_0}{r}\Theta(r-r_s) - \frac{2\lambda_0}{r}\Theta(r-a)
 \end{equation}
 
-Using the boundary condition $\psi(a) = 0$ we find that $\psi_0 = -2\bar{I} \log\left(\frac{a}{r_s}\right)$ so:
+$\Theta(r)$ is the Heaviside step function. Note that $\lambda_0 < 0$ refers to the plasma electron charge, so the first term in equation~\ref{eq:E_both} is the (negative) field due to the plasma electrons and the second term is the (positive) field due to the ions.
 
-\begin{equation}\label{eq:psi_everywhere}
-\psi(r) = \left\{ \begin{array}{lr}
--2\bar{I} \log\left(\frac{a}{r_s}\right) & 0<r<r_s \\
--2\bar{I} \log\left(\frac{a}{r_s}\right) - 2\bar{I} \log\left(\frac{r_s}{r}\right) & r_s<r<a \\
-0 & a<r
-\end{array} \right.
+We can now find the potential by integrating the electric field:
+
+\begin{equation}\label{eq:Psi_both}
+\begin{array}{rcl}
+\psi(r) & = & -\int_0^r E(r') dr' = \psi_0 - \int_{\min(r_s,a)}^r \frac{2\lambda_0}{r'}\left(\Theta(r-r_s) - \Theta(r-a)\right) dr' \\
+& = & \psi_0 - 2\lambda_0\log\left(\frac{r}{r_s}\right)\Theta(r-r_s) + 2\lambda_0\log\left(\frac{r}{a}\right)\Theta(r-a)
+\end{array}
 \end{equation}
 
-\begin{figure}[ht]\label{fig:fields}
-  \centering
-    \includegraphics[width=100mm]{./figures/fields.pdf}
-      \caption{$E_g$ and $\psi$ for the thin cylinder model. $\bar{I} = 1$ and distances are normalized to $a=1$.}
+Using the boundary condition $\psi(\max(r_s,a)) = 0$ we find that $\psi_0 = 2\lambda_0 \log\left(\frac{a}{r_s}\right)$ for both $r_s < a$ and $r_s > a$. The sign of $\psi_0$ flips between cases. 
+
+%\begin{figure}[ht]\label{fig:fields}
+%  \centering
+%    \includegraphics[width=100mm]{./figures/fields.pdf}
+%      \caption{$E_g$ and $\psi$ for the thin cylinder model. $\bar{I} = 1$ and distances are normalized to $a=1$.}
+%\end{figure}
+
+\begin{figure}
+\centering
+\mbox{\subfigure{\includegraphics[width=3in]{./figures/fields_rs_small.pdf}}\quad
+\subfigure{\includegraphics[width=3in]{./figures/fields_rs_large.pdf} }}
+\caption{Left: $r_s = 0.5$, $a=1$. Right: $r_s = 1.5$, $a=1$.} \label{fig12}
 \end{figure}
 
-Next, we find $\mathbf{A}_{\perp}$ using equation~\ref{eq:gauge_qs} and assuming that the motion of the plasma electrons is purely radial so $A_z = 0$. Then
+Next, we find $\mathbf{A}_{\perp}$ using equation~\ref{eq:gauge_qs}:
 
 \begin{equation}\label{eq:a_perp}
-\nabla_\perp \cdot \mathbf{A}_\perp = -\frac{\partial \psi}{\partial \xi} = - \frac{\partial \psi}{\partial r_s}\frac{\partial r_s}{\partial \xi} = -\frac{2\bar{I}}{r_s}r_s'
+\nabla_\perp \cdot \mathbf{A}_\perp = -\frac{\partial \psi}{\partial \xi} = - \frac{\partial \psi}{\partial r_s}\frac{\partial r_s}{\partial \xi}
 \end{equation}
 
-We evaluated the derivative $\partial_\xi \psi$ at $r = r_s$. In cylindrical coordinates, the divergence is
+\begin{equation}\label{eq:dpsi}
+\frac{\partial \psi}{\partial r_s} = \frac{2\lambda_0}{r_s}\Theta(r-r_s) + 2\lambda_0 \log\left(\frac{r_s}{r}\right)\delta(r-r_s) - \frac{2\lambda_0}{r_s} 
+\end{equation}
+
+The second term in equation~\ref{eq:dpsi} is zero because the delta function forces the log to be evaluated at $r=r_s$. In cylindrical coordinates, the divergence is
 
 \begin{equation}\label{eq:a_perp_cyl}
 \nabla_\perp \cdot \mathbf{A}_\perp = \frac{1}{r}\frac{\partial}{\partial r} (r A_r) + \frac{1}{r}\frac{\partial A_{\theta}}{\partial \theta}
@@ -188,28 +226,63 @@ We evaluated the derivative $\partial_\xi \psi$ at $r = r_s$. In cylindrical coo
 but we drop the $\theta$ term due to the cylindrical symmetry. We note that $r$ and $r_s$ are independent variables in this equation so we can easily integrate the equation in $r$ to find $A_r$
 
 \begin{equation}\label{eq:a_r}
-\frac{1}{r}\frac{\partial}{\partial r} (r A_r) = -\frac{2\bar{I}}{r_s}r_s' \rightarrow A_r = -\frac{\bar{I} r r_s'}{r_s}
+\frac{1}{r}\frac{\partial}{\partial r} (r A_r) = -\frac{2\lambda_0}{r_s}r_s'\left[\Theta(r-r_s)-1\right] \rightarrow A_r = -\frac{\lambda_0 r r_s'}{r_s}\left[\Theta(r-r_s)-1\right] 
 \end{equation}
 
 At this point, we'd like to start determining some physical quantities of interest, like $E_z$
 
 \begin{equation}\label{eq:E_z}
-E_z = \frac{\partial \psi}{\partial \xi} = \frac{2\bar{I}}{r_s}r_s'
+E_z = \frac{\partial \psi}{\partial \xi} = \frac{2\lambda_0 r_s'}{r_s}\left[\Theta(r-r_s)-1\right] 
 \end{equation}
 
-We see that $E_z$ is negative (at least in the first part of the oscillation) because the kick is inward ($r_s' < 0$). Now we need an equation of motion for $r_s$ which we can get by finding the force on the plasma electrons in the sheath:
+This equation tells us three things. First, we see that $E_z$ is zero outside the plasma sheath away from the beam axis. Second, $E_z$ is independent of $r$ in this region (which is good).Third, $E_z$ is negative (at least in the first part of the oscillation) because the kick is inward $r_s' < 0$ and because $\lambda_0 < 0$. This makes sense because we expect the field to be decelerating for a positively charged driver. 
+
+Now we need an equation of motion for $r_s$ which we can get by finding the force on the plasma electrons in the sheath:
 
 \begin{equation}\label{eq:force}
-F =-(E_r -V_z B_{\theta}) = -E_r
+F_r =-(E_r -v_z B_{\theta}) = \frac{\partial \phi}{\partial r} - v_z\frac{\partial A_z}{\partial r} + (1-v_z)\frac{\partial A_r}{\partial \xi}
 \end{equation}
 
-because we have assumed that $V_z = 0$. The radial field is
+The second term on the right hand side of equation~\ref{eq:force} is the field due to the beam current which we neglect because we assume the beam has passed. Evaluating the remaining derivatives in~\ref{eq:force} we have:
 
-\begin{equation}\label{eq:force}
-E_r =-\nabla_{\perp} \phi - \frac{\partial A_r}{\partial \xi} = \frac{\bar{I} r}{r_s^2}[r_s r_s'' - r_s'^2]
+\begin{equation}\label{dphi}
+\frac{\partial \phi}{\partial r} = -\frac{2\lambda_0}{r}\left[\Theta(r-r_s)-\Theta(r-a)\right]
 \end{equation}
 
-with $\nabla_{\perp} \phi = 0$ for the sheath electrons because there is zero charge within the sheath layer. The EOM $\partial_{\xi} P_{\perp} = -E_r$ is rewritten with the ``particle tracking" trajectory $\xi = t - z \rightarrow \partial_{\xi} = (1-v_z)\partial_t$:
+\begin{equation}\label{dA_r}
+\frac{\partial A_r}{\partial \xi} = -\frac{\lambda_0 r r_s''}{r_s}\left[\Theta(r-r_s)-1\right] + \frac{\lambda_0 r r_s'^2}{r_s^2}\left[\Theta(r-r_s)-1\right] + \frac{\lambda_0 r r_s'^2}{r_s}\delta(r-r_s)
+\end{equation}
+
+We need to evaluate the derivatives at the position of the electron sheath $r_s$. There is an ambiguity in the value of $\Theta(0)$. It can be 0, $1/2$, or 1 depending on your definition of $\Theta$. We can consider the three values the ``inside", ``on", and ``outside" trajectories of the electron sheath and calculate the field at $r=r_{s-}$,  $r=r_{s}$,  $r=r_{s+}$ with the respective values of $\Theta$.
+
+\begin{equation}\label{eq:dphi_all}
+\begin{array}{lcl}
+\left.\frac{\partial \phi}{\partial r} \right|_{r=r_s-} & = & 0 \\
+\left.\frac{\partial \phi}{\partial r} \right|_{r=r_s} & = & -\frac{\lambda_0}{r_s} \\
+\left.\frac{\partial \phi}{\partial r} \right|_{r=r_s+} & = & -\frac{2\lambda_0}{r_s}
+\end{array}
+\end{equation}
+
+\begin{equation}\label{eq:dA_r_all}
+\begin{array}{lcl}
+\left.\frac{\partial A_r}{\partial r} \right|_{r=r_s-} & = & \lambda_0 r_s'' - \frac{\lambda_0 r_s^2}{r_s} + \lambda_0 r_s'^2 \\
+\left.\frac{\partial A_r}{\partial r} \right|_{r=r_s} & = & \frac{\lambda_0 r_s''}{2} - \frac{\lambda_0 r_s^2}{2 r_s} + \lambda_0 r_s'^2\\
+\left.\frac{\partial A_r}{\partial r} \right|_{r=r_s+} & = & \lambda_0 r_s'^2
+\end{array}
+\end{equation}
+%\begin{equation}\label{eq:E_r}
+%E_r =-\nabla_{\perp} \phi - \frac{\partial A_r}{\partial \xi} = \frac{\bar{I} r}{r_s^2}[r_s r_s'' - r_s'^2]
+%\end{equation}
+
+%with $\nabla_{\perp} \phi = 0$ for the sheath electrons because there is zero charge within the sheath layer. 
+
+The equation of motion is: 
+
+\begin{equation}\label{eq:EOM_1}
+\frac{\partial P_\perp}{\partial \xi} = \frac{1}{1-v_z} F_r
+\end{equation}
+
+It is easiest to solve this equation for $r=r_{s-}$ because in that case $\partial_r \phi = 0$ and the $(1-v_z)^{-1}$ drops out. We rewrite the EOM with the ``particle tracking" trajectory $\xi = t - z \rightarrow \partial_{\xi} = (1-v_z)\partial_t$:
 
 \begin{equation}\label{eq:track}
 \frac{\partial P_{\perp}}{\partial \xi} = \frac{\partial \gamma v_{\perp}}{\partial \xi} =  \frac{\partial}{\partial \xi}\left(\gamma \frac{\partial r_{\perp}}{\partial t}\right) = \frac{\partial}{\partial \xi}\left[\gamma (1-v_z)\frac{\partial r_{\perp}}{\partial \xi}\right]
@@ -217,31 +290,29 @@ with $\nabla_{\perp} \phi = 0$ for the sheath electrons because there is zero ch
 
 and using the integral of motion $\gamma - P_z = 1 + \psi$
 
-\begin{equation}\label{eq:EOM}
-\frac{\partial P_{\perp}}{\partial \xi} = \frac{\partial}{\partial \xi}[(1+\psi)r_s'] = -\frac{\bar{I} r}{r_s^2}[r_s r_s'' - r_s'^2] 
+\begin{equation}\label{eq:EOM_2}
+\left. \frac{\partial P_{\perp}}{\partial \xi}\right|_{r=r_s-} = \left. \frac{\partial}{\partial \xi}[(1+\psi)r_s'] \right|_{r=r_s-}= \lambda_0\left[r_s'' +\frac{r_s'^2}{r_s}(r_s-1)\right]
 \end{equation}
 
-Plugging in $\psi$ and $r=r_s$ we have:
+Plugging in $\psi$ and taking the derivative we have we have:
 
 \begin{equation}\label{eq:rs}
-\left(1+\bar{I} + 2\bar{I}\log\left(\frac{r_s}{a}\right) \right)r_s'' +\bar{I}\frac{r_s'^2}{r_s} = 0
+\left(1-2\lambda_0\log\left(\frac{r_s}{a}\right) \right)r_s'' -\frac{\lambda_0 r_s'^2}{r_s} = \lambda_0\left[r_s'' +\frac{r_s'^2}{r_s}(r_s-1)\right]
 \end{equation}
 
 In order to study this equation, let's set $a=1$:
 
 \begin{equation}\label{eq:rs_simp}
-[1+\bar{I}(1+2\log(r_s))] r_s r_s'' + \bar{I}r_s'^2 = 0
+[1-\lambda_0(1+2\log(r_s))] r_s'' - \lambda_0 r_s'^2\left(\frac{1}{r_s}+1\right) = 0
 \end{equation}
 
-Immediately we see that we might run into trouble when $r_s = 0$ due to the divergence in the log term (although $x\log x = 0$ as $x\rightarrow0$).
 
-\begin{figure}[ht]\label{fig:sheath}
-  \centering
-    \includegraphics[width=100mm]{./figures/sheath.pdf}
-      \caption{$r_s$ and $E_z$ for the thin cylinder model. $\bar{I} = 1$ and distances are normalized to $a=1$. The initial kick $r_s'(0) = -0.46$. This is the largest kick that Mathematica can use to solve the equation for the given plot range.}
-\end{figure}
+%\begin{figure}[ht]\label{fig:sheath}
+%  \centering
+%    \includegraphics[width=100mm]{./figures/sheath.pdf}
+%      \caption{$r_s$ and $E_z$ for the thin cylinder model. $\bar{I} = 1$ and distances are normalized to $a=1$. The initial kick $r_s'(0) = -0.46$. This is the largest kick that %Mathematica can use to solve the equation for the given plot range.}
+%\end{figure}
 
-\subsection{Adding in longitudinal plasma motion}
 
 
 \end{document}
