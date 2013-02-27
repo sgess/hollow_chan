@@ -99,10 +99,40 @@ E_\perp = -\nabla_\perp \phi - \frac{\partial A_\perp}{\partial \xi}
 B_\perp = \nabla_\perp \times (A_z \hat{z}) + \nabla_z \times A_\perp
 \end{equation}
 
-We will rarely make use of equation~\ref{eq:Bz} because we assume that the plasma electrons only have radial motion which means that $\nabla_\perp \times A_\perp = 0$. We will often make use of the first term in equation~\ref{eq:E_perp} and define the``gaussian" electric field as
+We will rarely make use of equation~\ref{eq:Bz} because we assume that the plasma electrons only have radial motion which means that $\nabla_\perp \times A_\perp = 0$. This also means that $A_{\perp} = A_r$ and $\nabla_\perp = \partial_r \hat{r}$. Then equation~\ref{eq:E_perp} becomes
+
+\begin{equation}\label{E_r}
+E_r = -\frac{\partial \phi}{\partial r} - \frac{\partial A_r}{\partial \xi}
+\end{equation}
+
+and equation~\ref{eq:B_perp} becomes
+
+\begin{equation}\label{B_theta}
+B_\perp = \partial_r \hat{r} \times A_z \hat{z} - \partial_\xi \hat{z} \times A_r \hat{r} = -\left(\frac{\partial A_z}{\partial r} + \frac{\partial A_r}{\partial \xi}\right)\hat{\theta}
+\end{equation}
+
+Using the components of $\vec{E}$ and $\vec{B}$ that we have solved for, we can write the Lorentz force as:
+
+\begin{equation}\label{eq:lorentz}
+\vec{F} = q(\vec{E} + \vec{v} \times \vec{B}) = q(E_r - v_z B_\theta)\hat{r} + q(E_z + v_r B_\theta)\hat{z}
+\end{equation}
+
+We will make extensive use of the radial part of equation~\ref{eq:lorentz}. Inserting the potentials, we have
+
+\begin{equation}\label{eq:F_r}
+F_r = q\left[-\frac{\partial \phi}{\partial r} - \frac{\partial A_r}{\partial \xi} + v_z\left(\frac{\partial A_z}{\partial r} + \frac{\partial A_r}{\partial \xi}\right)\right] = -q\left[\frac{\partial \phi}{\partial r} - v_z \frac{\partial A_z}{\partial r} +(1-v_z) \frac{\partial A_r}{\partial \xi}\right]
+\end{equation}
+
+We will want to work with $\psi$ as much as possible so
+
+\begin{equation}\label{eq:F_wPsi}
+F_r = -q\left[\frac{\partial \psi}{\partial r} + (1-v_z)\frac{\partial A_z}{\partial r} + (1-v_z)\frac{\partial A_r}{\partial \xi}\right] = -q\left[\frac{\partial \psi}{\partial r} + (1-v_z)(\vec{\nabla} \times \vec{A})_\theta \right] 
+\end{equation}
+
+Lastly, we define $E_g$ as the``gaussian" electric field
 
 \begin{equation}\label{eq:E_guass}
-E_g = -\nabla_\perp \phi
+E_g = -\nabla_\perp \psi
 \end{equation}
 
 This term is especially useful when describing the fields and potentials of the radial charge distribution.
