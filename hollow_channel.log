@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.11 (TeX Live 2010) (format=pdflatex 2010.7.21)  27 FEB 2013 03:31
+This is pdfTeX, Version 3.1415926-1.40.11 (TeX Live 2010) (format=pdflatex 2010.7.21)  1 MAR 2013 18:48
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -260,26 +260,26 @@ LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 188.
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <10.95> on input line 204.
- [6]
-<./figures/fields_rs_small.pdf, id=42, 361.35pt x 225.60085pt>
+ [6] [7]
+<./figures/fields_rs_small.pdf, id=48, 361.35pt x 225.60085pt>
 File: ./figures/fields_rs_small.pdf Graphic file (type pdf)
 
 <use ./figures/fields_rs_small.pdf>
-<./figures/fields_rs_large.pdf, id=43, 361.35pt x 225.60085pt>
+<./figures/fields_rs_large.pdf, id=49, 361.35pt x 225.60085pt>
 File: ./figures/fields_rs_large.pdf Graphic file (type pdf)
 
-<use ./figures/fields_rs_large.pdf> [7] [8 <./figures/fields_rs_small.pdf> <./f
-igures/fields_rs_large.pdf>] [9]
+<use ./figures/fields_rs_large.pdf> [8 <./figures/fields_rs_small.pdf> <./figur
+es/fields_rs_large.pdf>] [9]
 No file hollow_channel.bbl.
 [10] (./hollow_channel.aux) ) 
 Here is how much of TeX's memory you used:
- 3527 strings out of 493747
- 47866 string characters out of 3143546
- 125030 words of memory out of 3000000
- 6797 multiletter control sequences out of 15000+200000
+ 3529 strings out of 493747
+ 47893 string characters out of 3143546
+ 124062 words of memory out of 3000000
+ 6799 multiletter control sequences out of 15000+200000
  9480 words of font info for 33 fonts, out of 3000000 for 9000
  714 hyphenation exceptions out of 8191
- 38i,8n,25p,849b,277s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 38i,8n,25p,626b,277s stack positions out of 5000i,500n,10000p,200000b,50000s
 </usr/local/texlive/2010/texmf-dist/fonts/type1/pu
 blic/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2010/texmf-dist/fonts/type1/pub
 lic/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2010/texmf-dist/fonts/type1/publ
@@ -296,7 +296,7 @@ sy10.pfb></usr/local/texlive/2010/texmf-dist/fonts/type1/public/amsfonts/cm/cms
 y6.pfb></usr/local/texlive/2010/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8
 .pfb></usr/local/texlive/2010/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.
 pfb>
-Output written on hollow_channel.pdf (10 pages, 264580 bytes).
+Output written on hollow_channel.pdf (10 pages, 265505 bytes).
 PDF statistics:
  132 PDF objects out of 1000 (max. 8388607)
  96 compressed objects within 1 object stream
