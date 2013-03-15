@@ -209,16 +209,23 @@ For the case $\lambda_b > \lambda_0$, all plasma electrons have the same radial 
 \frac{\partial}{\partial \xi}(\rho - J_z) = 0 \rightarrow \rho - J_z = const = \rho_0 
 \end{equation}
 
-We take the constant to be $\rho_0$ since before the beam arrives $J_z = 0$ and $\rho = \rho_0$ and this makes it easy to solve for $\psi(r)$ using Gauss's law. We choose to work with the plasma line charge density so
+The constant is $\rho_0$; before the beam arrives $J_z = 0$ and $\rho = \rho_0$. Rewriting $\rho_0$ in terms of the plasma electron line charge density we have
 
 \begin{equation}\label{eq:rho_for_lamb}
-\rho_0 = \frac{\lambda_0}{2 \pi r_s}\delta(r - r_s)
+\rho_0 = \frac{\lambda_0}{2 \pi r}\delta(r - r_s)
 \end{equation}
 
+and the ion line charge density is 
 
-We take $\psi(r=\infty) = 0$ because outside the cylinder, there is zero net charge (after the drive beam has passed), so Gauss's law gives $E_g(r > a) = 0$ and therefore $\psi(r > a) = const = 0$. Inside the electron sheath there is no charge either, so $E_g(r < r_s) = 0$ and $\psi(r < r_s) = \psi_0$. Between the electron sheath and the ion layer there is a net charge and Gauss's law gives $E_g(r) = 2\lambda_0/r$ for $r_s < r < a$. 
+\begin{equation}\label{eq:rho_ion}
+\rho_i = -\frac{\lambda_0}{2 \pi r}\delta(r - a)
+\end{equation}
 
-Actually, we do not need to confine ourselves to the case where $r_s < a$ (\emph{i.e.} the plasma electrons within the channel). If we want to consider oscillations of the plasma electrons about the ion cylinder we should also describe the field for $a <  r_s$. The field is $E_g(r) = -2\lambda_0/r$ for $a < r < r_s$  which is the same as in the previous case but the sign is flipped. We can accommodate both $r_s > a$ and $r_s < a$ in a single equation if we write:
+%This makes it easy to solve for $\psi(r)$ using Gauss's law. We take $\psi(r=\infty) = 0$ because outside the cylinder, there is zero net charge (after the drive beam has passed), so
+%and therefore $\psi(r > a) = const = 0$ and $\psi(r < r_s) = \psi_0$ Actually, we do not need to confine ourselves to the case where $r_s < a$ (\emph{i.e.} the plasma electrons within the channel). 
+If $r_s < a$, Gauss's law gives $E_g(r > a) = 0$. Inside the electron sheath there is no charge either, so $E_g(r < r_s) = 0$. Between the electron sheath and the ion layer there is a net charge and Gauss's law gives $E_g(r) = 2\lambda_0/r$ for $r_s < r < a$. 
+
+If we want to consider oscillations of the plasma electrons about the ion cylinder we should also describe the field for $a <  r_s$. The field is $E_g(r) = -2\lambda_0/r$ for $a < r < r_s$  which is the same as in the previous case but the sign is flipped. We can accommodate both $r_s > a$ and $r_s < a$ in a single equation if we write:
 
 \begin{equation}\label{eq:E_both}
 E_g(r) = \frac{2\lambda_0}{r}\Theta(r-r_s) - \frac{2\lambda_0}{r}\Theta(r-a)
@@ -230,12 +237,12 @@ We can now find the potential by integrating the electric field:
 
 \begin{equation}\label{eq:Psi_both}
 \begin{array}{rcl}
-\psi(r) & = & -\int_0^r E(r') dr' = \psi_0 - \int_{\min(r_s,a)}^r \frac{2\lambda_0}{r'}\left(\Theta(r-r_s) - \Theta(r-a)\right) dr' \\
+\psi(r) & = & -\int_0^r E(r') dr' = \psi_0 - \int_{\min(r_s,a)}^r \frac{2\lambda_0}{r'}\left(\Theta(r'-r_s) - \Theta(r'-a)\right) dr' \\
 & = & \psi_0 - 2\lambda_0\log\left(\frac{r}{r_s}\right)\Theta(r-r_s) + 2\lambda_0\log\left(\frac{r}{a}\right)\Theta(r-a)
 \end{array}
 \end{equation}
 
-Using the boundary condition $\psi(\max(r_s,a)) = 0$ we find that $\psi_0 = 2\lambda_0 \log\left(\frac{a}{r_s}\right)$ for both $r_s < a$ and $r_s > a$. The sign of $\psi_0$ flips between cases. 
+Using the boundary condition $\psi(\max(r_s,a)) = 0$ because $\psi = 0$ at infinity, we find that $\psi_0 = 2\lambda_0 \log\left(\frac{a}{r_s}\right)$ for both $r_s < a$ and $r_s > a$. The sign of $\psi_0$ flips between cases. 
 
 %\begin{figure}[ht]\label{fig:fields}
 %  \centering
@@ -257,7 +264,7 @@ Next, we find $\mathbf{A}_{\perp}$ using equation~\ref{eq:gauge_qs}:
 \end{equation}
 
 \begin{equation}\label{eq:dpsi}
-\frac{\partial \psi}{\partial r_s} = \frac{2\lambda_0}{r_s}\Theta(r-r_s) + 2\lambda_0 \log\left(\frac{r_s}{r}\right)\delta(r-r_s) - \frac{2\lambda_0}{r_s} 
+\frac{\partial \psi}{\partial r_s} = \frac{2\lambda_0}{r_s}\Theta(r-r_s) - 2\lambda_0 \log\left(\frac{r_s}{r}\right)\delta(r-r_s) - \frac{2\lambda_0}{r_s} 
 \end{equation}
 
 %The second term in equation~\ref{eq:dpsi} is zero because the delta function forces the log to be evaluated at $r=r_s$. 
@@ -270,38 +277,44 @@ In cylindrical coordinates, the divergence is
 
 but we drop the $\theta$ term due to the cylindrical symmetry. We note that $r$ and $r_s$ are independent variables in this equation so we can easily integrate the equation in $r$ to find $A_r$
 
-\begin{equation}\label{eq:a_r}
+\begin{equation}\label{eq:a_r_int}
 A_r = -\frac{1}{r}\int_0^rr'\left[\frac{2\lambda_0}{r_s}\Theta(r'-r_s) + 2\lambda_0 \log\left(\frac{r_s}{r'}\right)\delta(r'-r_s) - \frac{2\lambda_0}{r_s}\right]\frac{\partial r_s}{\partial \xi}dr'
 \end{equation}
 
+The second term in the integral drops out because $\log(r_s/r) = 0$ at $r = r_s$. Call the derivative of $r_s$ with respect to $\xi$ $r_s'$. Being careful with the integral of the Heaviside function, we find:
+
+\begin{equation}\label{eq:a_r}
+A_r = -\frac{\lambda_0 r_s'}{r_s}\left[\frac{r^2 -r_s^2}{r}\Theta(r-r_s) -r\right]
+\end{equation}
+
+\begin{figure}[htb]\label{fig:a_r_graph}
+  \centering
+    \includegraphics[width=100mm]{./figures/A_r.pdf}
+      \caption{Radial vector potential $A_r$ for $r_s = 0.5$ and $r_s' = 0.2$.}
+\end{figure}
 
 %\begin{equation}\label{eq:a_r}
 %\frac{1}{r}\frac{\partial}{\partial r} (r A_r) = -\frac{2\lambda_0}{r_s}r_s'\left[\Theta(r-r_s)-1\right] \rightarrow A_r = -\frac{\lambda_0 r r_s'}{r_s}\left[\Theta(r-r_s)-1\right] 
 %\end{equation}
 
-At this point, we'd like to start determining some physical quantities of interest, like $E_z$
+We are almost at the point where we can solve the radial force equation~\ref{eq:F_wPsi}. We need an expression for the axial vector potential $A_z$. However, we can express $A_z$ in terms of $\psi$ by noting that $J_z = v_z \rho_0 /(1-v_z)$. In our fluid description of the plasma sheath, $v_z$ is not a function of $r$. Then 
 
-\begin{equation}\label{eq:E_z}
-E_z = \frac{\partial \psi}{\partial \xi} = \frac{2\lambda_0 r_s'}{r_s}\left[\Theta(r-r_s)-1\right] 
+\begin{equation}\label{eq:A_z_Psi}
+A_z = \frac{v_z}{1-v_z}\psi
 \end{equation}
 
-This equation tells us three things. First, we see that $E_z$ is zero outside the plasma sheath away from the beam axis. Second, $E_z$ is independent of $r$ in this region (which is good).Third, $E_z$ is negative (at least in the first part of the oscillation) because the kick is inward $r_s' < 0$ and because $\lambda_0 < 0$. This makes sense because we expect the field to be decelerating for a positively charged driver. 
+Plugging into equation~\ref{eq:F_wPsi} and setting $q = -1$ for the electron charge, we have:
 
-Now we need an equation of motion for $r_s$ which we can get by finding the force on the plasma electrons in the sheath:
-
-\begin{equation}\label{eq:force}
-F_r =-(E_r -v_z B_{\theta}) = \frac{\partial \phi}{\partial r} - v_z\frac{\partial A_z}{\partial r} + (1-v_z)\frac{\partial A_r}{\partial \xi}
+\begin{equation}\label{eq:psi_for_az}
+F_r = \left[ (1+v_z)\frac{\partial \psi}{\partial r} + (1-v_z)\frac{\partial A_r}{\partial \xi}\right] 
 \end{equation}
 
-The second term on the right hand side of equation~\ref{eq:force} is the field due to the beam current which we neglect because we assume the beam has passed. Evaluating the remaining derivatives in~\ref{eq:force} we have:
 
-\begin{equation}\label{dphi}
-\frac{\partial \phi}{\partial r} = -\frac{2\lambda_0}{r}\left[\Theta(r-r_s)-\Theta(r-a)\right]
-\end{equation}
 
-\begin{equation}\label{dA_r}
-\frac{\partial A_r}{\partial \xi} = -\frac{\lambda_0 r r_s''}{r_s}\left[\Theta(r-r_s)-1\right] + \frac{\lambda_0 r r_s'^2}{r_s^2}\left[\Theta(r-r_s)-1\right] + \frac{\lambda_0 r r_s'^2}{r_s}\delta(r-r_s)
-\end{equation}
+
+
+
+
 
 %We also note that $J_z = v_z \rho$ so in general we have:
 %
@@ -312,38 +325,13 @@ The second term on the right hand side of equation~\ref{eq:force} is the field d
 %\end{array}
 %\end{equation}
 
-
-
-We need to evaluate the derivatives at the position of the electron sheath $r_s$. There is an ambiguity in the value of $\Theta(0)$. It can be 0, $1/2$, or 1 depending on your definition of $\Theta$. We can consider the three values the ``inside", ``on", and ``outside" trajectories of the electron sheath and calculate the field at $r=r_{s-}$,  $r=r_{s}$,  $r=r_{s+}$ with the respective values of $\Theta$.
-
-\begin{equation}\label{eq:dphi_all}
-\begin{array}{lcl}
-\left.\frac{\partial \phi}{\partial r} \right|_{r=r_s-} & = & 0 \\
-\left.\frac{\partial \phi}{\partial r} \right|_{r=r_s} & = & -\frac{\lambda_0}{r_s} \\
-\left.\frac{\partial \phi}{\partial r} \right|_{r=r_s+} & = & -\frac{2\lambda_0}{r_s}
-\end{array}
-\end{equation}
-
-\begin{equation}\label{eq:dA_r_all}
-\begin{array}{lcl}
-\left.\frac{\partial A_r}{\partial r} \right|_{r=r_s-} & = & \lambda_0 r_s'' - \frac{\lambda_0 r_s^2}{r_s} + \lambda_0 r_s'^2 \\
-\left.\frac{\partial A_r}{\partial r} \right|_{r=r_s} & = & \frac{\lambda_0 r_s''}{2} - \frac{\lambda_0 r_s^2}{2 r_s} + \lambda_0 r_s'^2\\
-\left.\frac{\partial A_r}{\partial r} \right|_{r=r_s+} & = & \lambda_0 r_s'^2
-\end{array}
-\end{equation}
-%\begin{equation}\label{eq:E_r}
-%E_r =-\nabla_{\perp} \phi - \frac{\partial A_r}{\partial \xi} = \frac{\bar{I} r}{r_s^2}[r_s r_s'' - r_s'^2]
-%\end{equation}
-
-%with $\nabla_{\perp} \phi = 0$ for the sheath electrons because there is zero charge within the sheath layer. 
-
 The equation of motion is: 
 
 \begin{equation}\label{eq:EOM_1}
-\frac{\partial P_\perp}{\partial \xi} = \frac{1}{1-v_z} F_r
+\frac{\partial P_\perp}{\partial \xi} = \frac{1}{1-v_z} F_r = \frac{1+v_z}{1-v_z}\frac{\partial \psi}{\partial r} + \frac{\partial A_r}{\partial \xi}
 \end{equation}
 
-It is easiest to solve this equation for $r=r_{s-}$ because in that case $\partial_r \phi = 0$ and the $(1-v_z)^{-1}$ drops out. We rewrite the EOM with the ``particle tracking" trajectory $\xi = t - z \rightarrow \partial_{\xi} = (1-v_z)\partial_t$:
+We rewrite the EOM with the ``particle tracking" trajectory $\xi = t - z \rightarrow \partial_{\xi} = (1-v_z)\partial_t$:
 
 \begin{equation}\label{eq:track}
 \frac{\partial P_{\perp}}{\partial \xi} = \frac{\partial \gamma v_{\perp}}{\partial \xi} =  \frac{\partial}{\partial \xi}\left(\gamma \frac{\partial r_{\perp}}{\partial t}\right) = \frac{\partial}{\partial \xi}\left[\gamma (1-v_z)\frac{\partial r_{\perp}}{\partial \xi}\right]
@@ -352,20 +340,71 @@ It is easiest to solve this equation for $r=r_{s-}$ because in that case $\parti
 and using the integral of motion $\gamma - P_z = 1 + \psi$
 
 \begin{equation}\label{eq:EOM_2}
-\left. \frac{\partial P_{\perp}}{\partial \xi}\right|_{r=r_s-} = \left. \frac{\partial}{\partial \xi}[(1+\psi)r_s'] \right|_{r=r_s-}= \lambda_0\left[r_s'' +\frac{r_s'^2}{r_s}(r_s-1)\right]
+\frac{\partial}{\partial \xi}[(1+\psi)r_s'] = \frac{1+v_z}{1-v_z}\frac{\partial \psi}{\partial r} + \frac{\partial A_r}{\partial \xi}
 \end{equation}
 
-Plugging in $\psi$ and taking the derivative we have we have:
+$v_z$ is also determined by the integral of motion:
 
-\begin{equation}\label{eq:rs}
-\left(1-2\lambda_0\log\left(\frac{r_s}{a}\right) \right)r_s'' -\frac{\lambda_0 r_s'^2}{r_s} = \lambda_0\left[r_s'' +\frac{r_s'^2}{r_s}(r_s-1)\right]
+\begin{equation}\label{eq:v_z1}
+1-v_z = \frac{2(1+\psi)^2}{1+P_\perp^2 + (1+\psi)^2}
 \end{equation}
 
-In order to study this equation, let's set $a=1$:
-
-\begin{equation}\label{eq:rs_simp}
-[1-\lambda_0(1+2\log(r_s))] r_s'' - \lambda_0 r_s'^2\left(\frac{1}{r_s}+1\right) = 0
+\begin{equation}\label{eq:v_z2}
+1+v_z = \frac{2(1+P_\perp)^2}{1+P_\perp^2 + (1+\psi)^2}
 \end{equation}
+
+\begin{equation}\label{eq:v_z3}
+\frac{1+v_z}{1-v_z} = \frac{(1+P_\perp)^2}{(1+\psi)^2} = \frac{\left[1+(1+\psi)^2r_s'^2\right]^2}{(1+\psi)^2}
+\end{equation}
+
+The derivative $\partial_r \psi$ is just $-E_g$. The $A_r$ derivative is:
+
+
+\begin{equation}\label{dA_r}
+\frac{\partial A_r}{\partial \xi} = -\frac{\lambda_0}{r_s}\left(r_s''-\frac{r_s'^2}{r_s}\right)\left[\frac{r^2-r_s^2}{r}\Theta(r-r_s)-r\right] - \frac{\lambda_0 r_s'}{r_s}\left[-\frac{r^2 -r_s^2}{r}r_s'\delta(r-r_s)-\frac{2 r_s r_s'}{r}\Theta(r-r_s)\right]
+\end{equation}
+
+This derivative looks terrible. Fortunately, we evaluate the derivative at $r=r_s$ and it simplifies considerably:
+
+\begin{equation}\label{dA_r}
+\left. \frac{\partial A_r}{\partial \xi}\right|_{r=r_s} = \lambda_0\left(r_s''-\frac{r_s'^2}{r_s}\right) + \lambda_0 \frac{2 r_s'^2}{r_s}\Theta(0)
+\end{equation}
+
+Plugging into equation~\ref{eq:EOM_2} and evaluating at $r=r_s$, we have:
+
+\begin{equation}\label{eq:rs_grrrr}
+\left(1+\psi(r_s)\right)r_s'' - \frac{\lambda_0 r_s'^2}{r_s} - \lambda_0 r_s = -\frac{\left[1+(1+\psi(r_s))^2r_s'^2\right]^2}{(1+\psi(r_s))^2}E_g(r_s)
+\end{equation}
+
+Ugh! This isn't quite right but getting closer. . .
+
+\begin{figure}[htb]\label{fig:diffuck}
+  \centering
+    \includegraphics[width=100mm]{./figures/diffeq.pdf}
+      \caption{$r_s$ as a function of $\xi$. $r_s'(0) = -0.1$}
+\end{figure}
+
+%Plugging in $\psi$ and taking the derivative we have we have:
+
+%\begin{equation}\label{eq:rs}
+%\left(1-2\lambda_0\log\left(\frac{r_s}{a}\right) \right)r_s'' -\frac{\lambda_0 r_s'^2}{r_s} = \lambda_0\left[r_s'' +\frac{r_s'^2}{r_s}(r_s-1)\right]
+%\end{equation}
+
+%In order to study this equation, let's set $a=1$:
+
+%\begin{equation}\label{eq:rs_simp}
+%[1-\lambda_0(1+2\log(r_s))] r_s'' - \lambda_0 r_s'^2\left(\frac{1}{r_s}+1\right) = 0
+%\end{equation}
+
+%\begin{equation}\label{eq:E_z}
+%E_z = \frac{\partial \psi}{\partial \xi} = \frac{2\lambda_0 r_s'}{r_s}\left[\Theta(r-r_s)-1\right] 
+%\end{equation}
+
+%It is easiest to solve this equation for $r=r_{s-}$ because in that case $\partial_r \phi = 0$ and the $(1-v_z)^{-1}$ drops out. 
+
+%\begin{equation}\label{eq:EOM_2}
+%\left. \frac{\partial P_{\perp}}{\partial \xi}\right|_{r=r_s-} = \left. \frac{\partial}{\partial \xi}[(1+\psi)r_s'] \right|_{r=r_s-}= \lambda_0\left[r_s'' +\frac{r_s'^2}{r_s}(r_s-1)\right]
+%\end{equation}
 
 
 %\begin{figure}[ht]\label{fig:sheath}
@@ -374,6 +413,53 @@ In order to study this equation, let's set $a=1$:
 %      \caption{$r_s$ and $E_z$ for the thin cylinder model. $\bar{I} = 1$ and distances are normalized to $a=1$. The initial kick $r_s'(0) = -0.46$. This is the largest kick that %Mathematica can use to solve the equation for the given plot range.}
 %\end{figure}
 
+%At this point, we'd like to start determining some physical quantities of interest, like $E_z$
+%
+%\begin{equation}\label{eq:E_z}
+%E_z = \frac{\partial \psi}{\partial \xi} = \frac{2\lambda_0 r_s'}{r_s}\left[\Theta(r-r_s)-1\right] 
+%\end{equation}
+%
+%
+%
+%This equation tells us three things. First, we see that $E_z$ is zero outside the plasma sheath away from the beam axis. Second, $E_z$ is independent of $r$ in this region (which is good).Third, $E_z$ is negative (at least in the first part of the oscillation) because the kick is inward $r_s' < 0$ and because $\lambda_0 < 0$. This makes sense because we expect the field to be decelerating for a positively charged driver. 
+%
+%Now we need an equation of motion for $r_s$ which we can get by finding the force on the plasma electrons in the sheath:
+%
+%\begin{equation}\label{eq:force}
+%F_r =-(E_r -v_z B_{\theta}) = \frac{\partial \phi}{\partial r} - v_z\frac{\partial A_z}{\partial r} + (1-v_z)\frac{\partial A_r}{\partial \xi}
+%\end{equation}
+%
+%The second term on the right hand side of equation~\ref{eq:force} is the field due to the beam current which we neglect because we assume the beam has passed. Evaluating the remaining derivatives in~\ref{eq:force} we have:
+%
+%\begin{equation}\label{dphi}
+%\frac{\partial \phi}{\partial r} = -\frac{2\lambda_0}{r}\left[\Theta(r-r_s)-\Theta(r-a)\right]
+%\end{equation}
+%
+%\begin{equation}\label{dA_r}
+%\frac{\partial A_r}{\partial \xi} = -\frac{\lambda_0 r r_s''}{r_s}\left[\Theta(r-r_s)-1\right] + \frac{\lambda_0 r r_s'^2}{r_s^2}\left[\Theta(r-r_s)-1\right] + \frac{\lambda_0 r r_s'^2}{r_s}\delta(r-r_s)
+%\end{equation}
 
+%We need to evaluate the derivatives at the position of the electron sheath $r_s$. There is an ambiguity in the value of $\Theta(0)$. It can be 0, $1/2$, or 1 depending on your definition of $\Theta$. We can consider the three values the ``inside", ``on", and ``outside" trajectories of the electron sheath and calculate the field at $r=r_{s-}$,  $r=r_{s}$,  $r=r_{s+}$ with the respective values of $\Theta$.
+%
+%\begin{equation}\label{eq:dphi_all}
+%\begin{array}{lcl}
+%\left.\frac{\partial \phi}{\partial r} \right|_{r=r_s-} & = & 0 \\
+%\left.\frac{\partial \phi}{\partial r} \right|_{r=r_s} & = & -\frac{\lambda_0}{r_s} \\
+%\left.\frac{\partial \phi}{\partial r} \right|_{r=r_s+} & = & -\frac{2\lambda_0}{r_s}
+%\end{array}
+%\end{equation}
+%
+%\begin{equation}\label{eq:dA_r_all}
+%\begin{array}{lcl}
+%\left.\frac{\partial A_r}{\partial r} \right|_{r=r_s-} & = & \lambda_0 r_s'' - \frac{\lambda_0 r_s^2}{r_s} + \lambda_0 r_s'^2 \\
+%\left.\frac{\partial A_r}{\partial r} \right|_{r=r_s} & = & \frac{\lambda_0 r_s''}{2} - \frac{\lambda_0 r_s^2}{2 r_s} + \lambda_0 r_s'^2\\
+%\left.\frac{\partial A_r}{\partial r} \right|_{r=r_s+} & = & \lambda_0 r_s'^2
+%\end{array}
+%\end{equation}
+%\begin{equation}\label{eq:E_r}
+%E_r =-\nabla_{\perp} \phi - \frac{\partial A_r}{\partial \xi} = \frac{\bar{I} r}{r_s^2}[r_s r_s'' - r_s'^2]
+%\end{equation}
+
+%with $\nabla_{\perp} \phi = 0$ for the sheath electrons because there is zero charge within the sheath layer. 
 
 \end{document}

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.11 (TeX Live 2010) (format=pdflatex 2010.7.21)  1 MAR 2013 18:48
+This is pdfTeX, Version 3.1415926-1.40.11 (TeX Live 2010) (format=pdflatex 2010.7.21)  15 MAR 2013 04:28
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -161,7 +161,11 @@ Class revtex4-1 Info: cite was not loaded (OK!) on input line 6.
 Class revtex4-1 Info: mcite was not loaded (OK!) on input line 6.
 Class revtex4-1 Info: multicol was not loaded (OK!) on input line 6.
 
-(./hollow_channel.aux)
+(./hollow_channel.aux
+
+LaTeX Warning: Label `dA_r' multiply defined.
+
+)
 \openout1 = `hollow_channel.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 6.
@@ -176,8 +180,7 @@ LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 6.
 LaTeX Font Info:    ... okay on input line 6.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 6.
 LaTeX Font Info:    ... okay on input line 6.
-
-(/usr/local/texlive/2010/texmf-dist/tex/context/base/supp-pdf.mkii
+ (/usr/local/texlive/2010/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count100
 \scratchdimen=\dimen106
@@ -261,45 +264,59 @@ LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <10.95> on input line 204.
  [6] [7]
-<./figures/fields_rs_small.pdf, id=48, 361.35pt x 225.60085pt>
+<./figures/fields_rs_small.pdf, id=50, 361.35pt x 225.60085pt>
 File: ./figures/fields_rs_small.pdf Graphic file (type pdf)
 
 <use ./figures/fields_rs_small.pdf>
-<./figures/fields_rs_large.pdf, id=49, 361.35pt x 225.60085pt>
+<./figures/fields_rs_large.pdf, id=51, 361.35pt x 225.60085pt>
 File: ./figures/fields_rs_large.pdf Graphic file (type pdf)
 
-<use ./figures/fields_rs_large.pdf> [8 <./figures/fields_rs_small.pdf> <./figur
-es/fields_rs_large.pdf>] [9]
+<use ./figures/fields_rs_large.pdf>
+<./figures/A_r.pdf, id=52, 361.35pt x 225.60085pt>
+File: ./figures/A_r.pdf Graphic file (type pdf)
+ <use ./figures/A_r.pdf>
+[8 <./figures/fields_rs_small.pdf> <./figures/fields_rs_large.pdf>] [9 <./figur
+es/A_r.pdf>]
+Overfull \hbox (11.23338pt too wide) detected at line 365
+[][] \OT1/cmr/m/n/12 = \OMS/cmsy/m/n/12 ^^@[] [] [] ^^@ [] []
+ []
+
+<./figures/diffeq.pdf, id=92, 361.35pt x 225.47638pt>
+File: ./figures/diffeq.pdf Graphic file (type pdf)
+
+<use ./figures/diffeq.pdf>
 No file hollow_channel.bbl.
-[10] (./hollow_channel.aux) ) 
+[10 <./figures/diffeq.pdf>] (./hollow_channel.aux)
+
+LaTeX Warning: There were multiply-defined labels.
+
+ ) 
 Here is how much of TeX's memory you used:
- 3529 strings out of 493747
- 47893 string characters out of 3143546
- 124062 words of memory out of 3000000
- 6799 multiletter control sequences out of 15000+200000
- 9480 words of font info for 33 fonts, out of 3000000 for 9000
+ 3541 strings out of 493747
+ 48136 string characters out of 3143546
+ 124144 words of memory out of 3000000
+ 6810 multiletter control sequences out of 15000+200000
+ 9133 words of font info for 32 fonts, out of 3000000 for 9000
  714 hyphenation exceptions out of 8191
  38i,8n,25p,626b,277s stack positions out of 5000i,500n,10000p,200000b,50000s
-</usr/local/texlive/2010/texmf-dist/fonts/type1/pu
-blic/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2010/texmf-dist/fonts/type1/pub
-lic/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2010/texmf-dist/fonts/type1/publ
-ic/amsfonts/cm/cmex10.pfb></usr/local/texlive/2010/texmf-dist/fonts/type1/publi
-c/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2010/texmf-dist/fonts/type1/public
-/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2010/texmf-dist/fonts/type1/public/
-amsfonts/cm/cmmi6.pfb></usr/local/texlive/2010/texmf-dist/fonts/type1/public/am
-sfonts/cm/cmmi8.pfb></usr/local/texlive/2010/texmf-dist/fonts/type1/public/amsf
-onts/cm/cmr10.pfb></usr/local/texlive/2010/texmf-dist/fonts/type1/public/amsfon
-ts/cm/cmr12.pfb></usr/local/texlive/2010/texmf-dist/fonts/type1/public/amsfonts
-/cm/cmr6.pfb></usr/local/texlive/2010/texmf-dist/fonts/type1/public/amsfonts/cm
-/cmr8.pfb></usr/local/texlive/2010/texmf-dist/fonts/type1/public/amsfonts/cm/cm
-sy10.pfb></usr/local/texlive/2010/texmf-dist/fonts/type1/public/amsfonts/cm/cms
-y6.pfb></usr/local/texlive/2010/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8
-.pfb></usr/local/texlive/2010/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.
-pfb>
-Output written on hollow_channel.pdf (10 pages, 265505 bytes).
+</usr/local/texlive/2010/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
+></usr/local/texlive/2010/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
+</usr/local/texlive/2010/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><
+/usr/local/texlive/2010/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></
+usr/local/texlive/2010/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></u
+sr/local/texlive/2010/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr
+/local/texlive/2010/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/l
+ocal/texlive/2010/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/loc
+al/texlive/2010/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local
+/texlive/2010/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/te
+xlive/2010/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texli
+ve/2010/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texliv
+e/2010/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/
+2010/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
+Output written on hollow_channel.pdf (10 pages, 331329 bytes).
 PDF statistics:
- 132 PDF objects out of 1000 (max. 8388607)
- 96 compressed objects within 1 object stream
+ 153 PDF objects out of 1000 (max. 8388607)
+ 113 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
- 16 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 26 words of extra memory for PDF output out of 10000 (max. 10000000)
 
